@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maryanto.dimas.udemy.demo4.MainActivity">
+
+    <EditText
+        android:id="@+id/dolarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/convertedButton"
+        android:layout_toStartOf="@+id/convertedButton"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/rupiahText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dolarText"
+        android:layout_alignStart="@+id/dolarText"
+        android:layout_below="@+id/dolarText"
+        android:layout_margin="20dp"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:inputType="none"
+        android:text="Rp. 0,-"
+        android:textAlignment="textEnd"
+        android:gravity="end"/>
+
+    <Button
+        android:id="@+id/convertedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rupiahText"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:padding="20dp"
+        android:text="Konversi" android:onClick="convertToIDR"/>
+</RelativeLayout>
