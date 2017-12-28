@@ -1,0 +1,4 @@
+# macos store ignore
+.DS_Store
+# jetbraint ignore
+.idea/
