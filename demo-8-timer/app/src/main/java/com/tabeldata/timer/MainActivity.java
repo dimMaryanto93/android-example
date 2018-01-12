@@ -1,5 +1,6 @@
 package com.tabeldata.timer;
 
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,14 +13,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Handler handler = new Handler();
-        Runnable run = new Runnable() {
+        new CountDownTimer(10000l, 1000l){
+
+            /**
+             * dijalakan setiap detik
+             * @param l
+             */
             @Override
-            public void run() {
-                Log.i("runable", "a second must have passed");
-                handler.postDelayed(this, 1000);
+            public void onTick(long l) {
+                Log.i("timer", String.format("telah berjalan selama %d detik", l));
             }
-        };
-        handler.post(run);
+
+            /**
+             * akan berjalan selama 10 detik
+             */
+            @Override
+            public void onFinish() {
+                Log.i("timer", "scheduler telah selesai!");
+            }
+        }.start();
     }
 }
